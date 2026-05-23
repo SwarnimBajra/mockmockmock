@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# artifacts
+*.mp3
+*0009156-260519110011954.xlsx
+
+data/
+birds_dataset.xlsx
