@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import logging
 
 from app.routes.list_species import router
+import app.routes.dataset_query  # noqa: F401
 import app.routes.forest_health  # noqa: F401
 
 logging.basicConfig(

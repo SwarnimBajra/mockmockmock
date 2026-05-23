@@ -8,8 +8,13 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 
-DEFAULT_DATASET_PATH = Path(__file__).resolve().parents[2] / "0009156-260519110011954.xlsx"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "birds_dataset.xlsx"
+LEGACY_DATASET_PATH = PROJECT_ROOT / "0009156-260519110011954.xlsx"
 STATUS_VALUES = {"PRESENT", "ABSENT"}
+
+if not DEFAULT_DATASET_PATH.exists() and LEGACY_DATASET_PATH.exists():
+    DEFAULT_DATASET_PATH = LEGACY_DATASET_PATH
 
 
 def _clean_text(value) -> str:
